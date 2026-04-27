@@ -668,7 +668,7 @@ input, textarea, select {
 .treatment-card {
   background: var(--white);
   border-radius: var(--radius-md);
-  padding: 2rem;
+  padding: 0 2rem 2rem;
   transition: all var(--transition-medium);
   border: 1px solid transparent;
 }
@@ -1795,8 +1795,8 @@ input, textarea, select {
 
 .treatment-img {
   height: 210px;
-  margin: -2rem -2rem 1.5rem;
-  width: calc(100% + 4rem);
+  margin: 0 0 1.5rem;
+  width: 100%;
   border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
