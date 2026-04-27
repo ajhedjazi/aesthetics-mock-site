@@ -23,6 +23,7 @@
   --text-primary: #2B2B2B;
   --text-light: #5A5A5A;
   --white: #FFFFFF;
+  --demo-banner-height: 46px;
   
   /* Typography */
   --font-heading: 'EB Garamond', Georgia, 'Times New Roman', serif;
@@ -161,11 +162,60 @@ input, textarea, select {
 }
 
 /* ============================================
+   DEMO BANNER
+   ============================================ */
+.demo-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: rgba(74, 52, 34, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.demo-banner-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  min-height: var(--demo-banner-height);
+  padding: 0.65rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.demo-banner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.demo-banner-link {
+  flex-shrink: 0;
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all var(--transition-medium);
+}
+
+.demo-banner-link:hover {
+  color: var(--brown-deep);
+  background: var(--white);
+}
+
+/* ============================================
    1. STICKY NAVIGATION
    ============================================ */
 .navbar {
   position: fixed;
-  top: 0;
+  top: var(--demo-banner-height);
   left: 0;
   right: 0;
   z-index: 1000;
@@ -292,11 +342,11 @@ input, textarea, select {
 /* Mobile Menu */
 .mobile-menu {
   position: fixed;
-  top: 0;
+  top: var(--demo-banner-height);
   right: -100%;
   width: 100%;
   max-width: 400px;
-  height: 100vh;
+  height: calc(100vh - var(--demo-banner-height));
   background: var(--bg-primary);
   padding: 100px 30px 30px;
   transition: right var(--transition-medium);
@@ -362,7 +412,7 @@ input, textarea, select {
    ============================================ */
 .hero {
   min-height: 100vh;
-  padding: 120px 20px 80px;
+  padding: calc(120px + var(--demo-banner-height)) 20px 80px;
   display: flex;
   align-items: center;
   background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
@@ -486,6 +536,21 @@ input, textarea, select {
 /* Hero Visual */
 .hero-visual {
   position: relative;
+}
+
+.demo-image-note {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(242, 236, 232, 0.9);
+  color: var(--brown-deep);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-soft);
+  z-index: 2;
 }
 
 .hero-image-card {
@@ -652,6 +717,53 @@ input, textarea, select {
 }
 
 /* ============================================
+   4. WHY DEMO WORKS
+   ============================================ */
+.why-demo-works {
+  background:
+    radial-gradient(circle at top right, rgba(135, 93, 59, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(231, 227, 222, 0.55) 100%);
+}
+
+.why-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.why-demo-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(135, 93, 59, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(8px);
+}
+
+.why-demo-icon {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(135, 93, 59, 0.1);
+  color: var(--brown-warm);
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.why-demo-card h3 {
+  margin-bottom: 0.85rem;
+  font-size: 1.45rem;
+}
+
+.why-demo-card p {
+  margin-bottom: 0;
+  color: var(--text-light);
+}
+
+/* ============================================
    4. TREATMENTS SECTION
    ============================================ */
 .treatments {
@@ -715,6 +827,39 @@ input, textarea, select {
 
 .treatment-link:hover {
   color: var(--brown-warm);
+}
+
+/* ============================================
+   5. MID-PAGE CTA
+   ============================================ */
+.service-cta {
+  background: var(--bg-primary);
+  padding: 0 20px 100px;
+}
+
+.service-cta-panel {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 3.25rem;
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, rgba(74, 52, 34, 0.96) 0%, rgba(109, 74, 45, 0.94) 100%);
+  color: var(--white);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.service-cta-panel .section-tag,
+.service-cta-panel h2,
+.service-cta-panel p {
+  color: var(--white);
+}
+
+.service-cta-panel p {
+  max-width: 620px;
+  margin: 0 auto 1.75rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
 }
 
 /* ============================================
@@ -1269,6 +1414,16 @@ input, textarea, select {
   color: var(--text-light);
 }
 
+.detail-item a {
+  font-size: 0.9rem;
+  color: var(--brown-warm);
+  font-weight: 500;
+}
+
+.detail-item a:hover {
+  color: var(--brown-deep);
+}
+
 /* Map Placeholder */
 .map-placeholder {
   flex: 1;
@@ -1628,6 +1783,10 @@ input, textarea, select {
    RESPONSIVE STYLES
    ============================================ */
 @media (max-width: 1024px) {
+  .why-demo-grid {
+    grid-template-columns: 1fr;
+  }
+
   .hero-container,
   .featured-container,
   .about-container,
@@ -1660,6 +1819,21 @@ input, textarea, select {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --demo-banner-height: 78px;
+  }
+
+  .demo-banner-container {
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .demo-banner-link {
+    width: 100%;
+    text-align: center;
+  }
+
   .nav-links,
   .nav-cta {
     display: none;
@@ -1674,7 +1848,7 @@ input, textarea, select {
   }
   
   .hero {
-    padding: 100px 20px 60px;
+    padding: calc(100px + var(--demo-banner-height) + 20px) 20px 60px;
     min-height: auto;
   }
   
@@ -1702,7 +1876,8 @@ input, textarea, select {
   .treatments-grid,
   .results-grid,
   .reviews-grid,
-  .process-grid {
+  .process-grid,
+  .why-demo-grid {
     grid-template-columns: 1fr;
   }
   
@@ -1719,15 +1894,24 @@ input, textarea, select {
   .booking-buttons {
     flex-direction: column;
   }
-  
+
   .booking-buttons .btn {
     width: 100%;
+  }
+
+  .service-cta {
+    padding-bottom: 70px;
+  }
+
+  .service-cta-panel {
+    padding: 2.25rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   :root {
     --section-padding: 60px 15px;
+    --demo-banner-height: 92px;
   }
   
   .nav-container {
@@ -1995,6 +2179,35 @@ input, textarea, select {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.demo-contact-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(242, 236, 232, 0.92) 100%);
+}
+
+.demo-contact-inner {
+  padding: 2rem;
+}
+
+.demo-contact-inner h3 {
+  margin-bottom: 0.85rem;
+}
+
+.demo-contact-inner p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.demo-contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.demo-contact-actions .btn {
+  width: 100%;
 }
 
 /* Mobile */
