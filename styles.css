@@ -1742,10 +1742,18 @@ input, textarea, select {
     margin-bottom: 40px;
   }
   
-  .treatment-card,
   .review-card,
   .process-card {
     padding: 1.5rem;
+  }
+
+  .treatment-card {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .treatment-img {
+    margin: 0 -1.5rem 1.5rem;
+    width: calc(100% + 3rem);
   }
   
   .back-to-top {
