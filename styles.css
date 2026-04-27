@@ -1794,9 +1794,9 @@ input, textarea, select {
 }
 
 .treatment-img {
-  height: 210px;
-  margin: 0 0 1.5rem;
-  width: 100%;
+  height: 250px;
+  margin: 0 -2rem 1.5rem;
+  width: calc(100% + 4rem);
   border-radius: var(--radius-md) var(--radius-md) 0 0;
 }
 
