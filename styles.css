@@ -1,0 +1,335 @@
+html { -webkit-text-size-adjust: 100%; }
+html, body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+body,
+p,
+span,
+li,
+label,
+small,
+strong,
+em,
+input,
+select,
+textarea {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+a,
+button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+  font-family: inherit;
+  font-weight: inherit;
+}
+.font-black {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+.font-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+label.font-black,
+button.font-black,
+a.font-black,
+input.font-black,
+select.font-black,
+textarea.font-black {
+  font-weight: 700;
+}
+input, select, button { box-sizing: border-box; width: 100%; max-width: 100%; }
+input, select { min-height: 56px; }
+button { display: block; }
+
+.accent-bg { background-color: #F97316; }
+.secondary-bg { background-color: #C46A2D; }
+.bg-deep-black { background-color: #0B0B0B; }
+.text-accent { color: #F97316; }
+.text-secondary { color: #C46A2D; }
+.border-accent { border-color: #F97316; }
+.hero-van-bg {
+  background:
+    linear-gradient(90deg, rgba(11, 11, 11, 0.9) 0%, rgba(11, 11, 11, 0.76) 42%, rgba(11, 11, 11, 0.78) 100%),
+    url("assets/hero-van.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+.trust-strip {
+  background:
+    linear-gradient(180deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0) 58%),
+    #0B0B0B;
+  box-shadow: inset 0 4px 0 #F97316;
+}
+.brand-mark {
+  width: 188px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  line-height: 0.92;
+}
+.brand-wordmark-top,
+.brand-wordmark-bottom {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+  color: #111111;
+}
+.brand-wordmark-top {
+  font-size: 1.72rem;
+}
+.brand-wordmark-bottom {
+  font-size: 1.22rem;
+  letter-spacing: 0.14em;
+  color: #F97316;
+}
+.brand-wordmark-meta {
+  display: block;
+  margin-top: 0.26rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #4B5563;
+}
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.55rem;
+  height: 2px;
+  background-color: #F97316;
+  opacity: 0;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  opacity: 1;
+}
+#services,
+#work,
+#testimonials,
+#why,
+#book,
+#faq {
+  scroll-margin-top: 108px;
+}
+#services {
+  scroll-margin-top: 132px;
+}
+.work-card {
+  display: flex;
+  flex-direction: column;
+  background: #050505;
+  text-align: left;
+  width: 100%;
+}
+.work-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 4px solid #ffffff;
+}
+.work-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.42));
+}
+.work-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+}
+.work-card-image-left { object-position: left center; }
+.work-card-image-center { object-position: center center; }
+.work-card-image-right { object-position: right center; }
+.work-card-image-detail { object-position: 72% center; }
+.work-card-copy {
+  padding: 1.5rem;
+}
+.lightbox-open {
+  overflow: hidden;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+}
+.lightbox-panel {
+  position: relative;
+  z-index: 1;
+  width: min(960px, calc(100vw - 2rem));
+  margin: 2rem auto;
+  background: #0b0b0b;
+  border: 4px solid #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+.lightbox-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid #ffffff;
+  background: #0b0b0b;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.lightbox-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 4px solid #ffffff;
+}
+.lightbox-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lightbox-copy {
+  padding: 1.5rem;
+}
+.footer-logo {
+  display: block;
+  width: 220px;
+  height: auto;
+  max-width: 100%;
+  opacity: 0.94;
+}
+.trust-strip span {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+@media (min-width: 640px) {
+  .trust-strip span {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+  }
+}
+@media (max-width: 639px) {
+  body {
+    padding-bottom: 88px;
+  }
+  #services,
+  #work,
+  #testimonials,
+  #why,
+  #book,
+  #faq {
+    scroll-margin-top: 92px;
+  }
+  #services {
+    scroll-margin-top: 112px;
+  }
+  .lightbox-panel {
+    width: calc(100vw - 1rem);
+    margin: 0.5rem auto;
+  }
+  .lightbox-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+  .lightbox-copy {
+    padding: 1rem;
+  }
+  .hero-van-bg {
+    background:
+      linear-gradient(180deg, rgba(11, 11, 11, 0.86) 0%, rgba(11, 11, 11, 0.92) 100%),
+      url("assets/hero-van.jpeg");
+    background-size: cover;
+    background-position: 62% center;
+  }
+  .brand-mark {
+    width: 152px;
+    min-height: 62px;
+  }
+  .brand-wordmark-top {
+    font-size: 1.35rem;
+  }
+  .brand-wordmark-bottom {
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+  }
+  .brand-wordmark-meta {
+    margin-top: 0.28rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.18em;
+  }
+  .footer-logo {
+    width: 180px;
+  }
+  .trust-strip span {
+    font-size: 0.65rem;
+    padding: 0.45rem 0.65rem;
+    white-space: normal;
+    line-height: 1.15;
+    width: 100%;
+  }
+  .trust-strip span:last-child {
+    display: none;
+  }
+  .service-card-boiler,
+  .why-card-gas {
+    border-bottom-width: 0 !important;
+  }
+}
+.mobile-sticky-cta {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+}
+.mobile-menu { display: none; }
+.mobile-menu.show { display: block; }
