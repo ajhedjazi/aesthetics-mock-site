@@ -244,7 +244,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      alert('Thanks for your message. This demo form is set up as a placeholder for Aesthetic Flow.\n\nRequest type: ' + data.treatment + '\nName: ' + data.name);
+      const generalEmail = this.dataset.generalEmail || 'hello@aestheticflow.co.uk';
+      const reviewEmail = this.dataset.reviewEmail || 'reviews@aestheticflow.co.uk';
+      const targetEmail = data.treatment === 'website-review' ? reviewEmail : generalEmail;
+      const subject = data.treatment === 'website-review' ? 'Website Review Request' : 'Website Enquiry';
+      const body = [
+        'Name: ' + data.name,
+        'Email: ' + data.email,
+        'Request type: ' + data.treatment,
+        '',
+        'Message:',
+        data.message || 'No message provided.'
+      ].join('\n');
+
+      window.location.href = 'mailto:' + encodeURIComponent(targetEmail)
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+
+      alert('Your email app should open with your message addressed to ' + targetEmail + '.');
       this.reset();
     });
   }
