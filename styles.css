@@ -167,6 +167,10 @@ textarea {
   margin-bottom: 3rem;
 }
 
+.section-heading h2 {
+  margin-bottom: 0.85rem;
+}
+
 .section-heading.centered {
   margin-left: auto;
   margin-right: auto;
@@ -674,7 +678,7 @@ textarea {
 }
 
 .hero {
-  padding: 5rem 0 3rem;
+  padding: 5.4rem 0 3.35rem;
 }
 
 .hero-layout {
@@ -687,6 +691,11 @@ textarea {
 .hero-copy p {
   max-width: 620px;
   font-size: 1.08rem;
+}
+
+.hero-copy h1 {
+  max-width: 11.5ch;
+  margin-bottom: 1.15rem;
 }
 
 .hero-actions {
@@ -718,12 +727,33 @@ textarea {
   gap: 1rem;
 }
 
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 1.75rem -1rem -1.5rem 12%;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.38), rgba(135, 93, 59, 0.08));
+  z-index: 0;
+  filter: blur(2px);
+}
+
 .mockup-window {
+  position: relative;
+  z-index: 1;
   padding: 1rem;
   border-radius: var(--radius-xl);
   border: 1px solid var(--line-soft);
   background: rgba(255, 253, 251, 0.86);
   box-shadow: var(--shadow-strong);
+}
+
+.mockup-window::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: calc(var(--radius-xl) - 12px);
+  border: 1px solid rgba(74, 52, 34, 0.06);
+  pointer-events: none;
 }
 
 .mockup-header {
@@ -754,8 +784,53 @@ textarea {
   gap: 1rem;
 }
 
+.mockup-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 18px;
+  background: rgba(245, 238, 231, 0.85);
+  border: 1px solid rgba(74, 52, 34, 0.08);
+}
+
+.mockup-nav {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.mockup-nav span,
+.mockup-pill,
+.card-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.36rem 0.68rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mockup-statbar {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
 .mockup-image {
   aspect-ratio: 4 / 4.4;
+}
+
+.mockup-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(34, 24, 18, 0) 48%, rgba(34, 24, 18, 0.32) 100%);
 }
 
 .mockup-panels {
@@ -820,11 +895,27 @@ textarea {
   margin-bottom: 0.55rem;
 }
 
+.mini-panel {
+  min-height: 100%;
+}
+
+.mini-panel p:last-child,
+.service-card p:last-child,
+.problem-card p:last-child,
+.work-card p:last-child,
+.feature-card p:last-child,
+.value-card p:last-child,
+.benefit-card p:last-child,
+.stat-card p:last-child {
+  margin-bottom: 0;
+}
+
 .metric-card {
   position: absolute;
   right: -1rem;
   bottom: 2rem;
   max-width: 240px;
+  z-index: 1;
 }
 
 .metric-number {
@@ -917,6 +1008,28 @@ textarea {
   height: 100%;
 }
 
+.problem-card,
+.service-card,
+.work-card,
+.feature-card,
+.benefit-card,
+.value-card,
+.stat-card {
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
+}
+
+.problem-card:hover,
+.service-card:hover,
+.work-card:hover,
+.feature-card:hover,
+.benefit-card:hover,
+.value-card:hover,
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: rgba(135, 93, 59, 0.16);
+}
+
 .service-card .placeholder-media,
 .work-card .placeholder-media,
 .proof-card .placeholder-media,
@@ -924,6 +1037,11 @@ textarea {
 .hero-card-media {
   aspect-ratio: 16 / 11;
   margin-bottom: 1rem;
+}
+
+.service-card .text-link,
+.work-card .text-link {
+  margin-top: auto;
 }
 
 .card-tag-row {
@@ -1047,6 +1165,14 @@ textarea {
   gap: 1rem;
 }
 
+.page-summary h1 {
+  max-width: 12ch;
+}
+
+.page-summary p {
+  max-width: 60ch;
+}
+
 .summary-list,
 .feature-list,
 .check-list,
@@ -1087,6 +1213,13 @@ textarea {
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 1.5rem;
   align-items: start;
+}
+
+.section-intro-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .contact-layout {
