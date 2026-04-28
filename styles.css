@@ -330,9 +330,6 @@ input, textarea, select {
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-medium), transform var(--transition-medium);
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 1.1rem;
 }
 
 .nav-dropdown.open .nav-dropdown-menu {
@@ -345,95 +342,110 @@ input, textarea, select {
   position: static;
 }
 
-.mega-menu-services {
+.mega-menu {
+  left: 50%;
+  transform: translate(-50%, 12px);
+  width: min(1200px, calc(100vw - 48px));
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.nav-dropdown.open .mega-menu {
+  transform: translate(-50%, 0);
+}
+
+.mega-menu-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
-.mega-service-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  min-height: 132px;
-  padding: 1rem 1.05rem;
-  border-radius: 14px;
-  background: linear-gradient(155deg, rgba(74, 52, 34, 0.03), rgba(74, 52, 34, 0.08));
-  border: 1px solid rgba(74, 52, 34, 0.12);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
-}
-
-.mega-service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 26px rgba(47, 34, 25, 0.12);
-  border-color: rgba(74, 52, 34, 0.22);
-}
-
-.mega-service-card::after {
-  display: none;
-}
-
-.mega-service-title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.25;
-}
-
-.mega-service-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-.mega-menu-featured {
-  display: grid;
-  gap: 0.9rem;
-  grid-template-rows: 1fr 1fr;
-}
-
-.mega-image-card {
-  min-height: 126px;
-  border-radius: 14px;
-  overflow: hidden;
-  padding: 1rem;
+.mega-menu-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 0.3rem;
-  color: var(--white) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  gap: 0.6rem;
+  min-height: 230px;
+  padding: 1.6rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(47, 34, 25, 0.18);
+  color: rgba(255, 249, 242, 0.95) !important;
+  isolation: isolate;
+}
+
+.mega-menu-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--card-bg);
   background-size: cover;
   background-position: center;
-  box-shadow: 0 10px 22px rgba(47, 34, 25, 0.18);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  transform: scale(1);
+  transition: transform 0.7s ease;
+  z-index: -2;
 }
 
-.mega-image-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(47, 34, 25, 0.24);
+.mega-menu-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, rgba(31, 23, 17, 0.28) 12%, rgba(31, 23, 17, 0.74) 68%, rgba(24, 18, 14, 0.82) 100%);
+  z-index: -1;
 }
 
-.mega-image-card::after {
-  display: none;
+.mega-menu-card:hover::before {
+  transform: scale(1.06);
 }
 
-.mega-image-card-large {
-  min-height: 165px;
-}
-
-.mega-image-eyebrow {
-  font-size: 0.69rem;
+.mega-card-category {
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 1.8px;
-  opacity: 0.9;
+  letter-spacing: 2px;
+  font-weight: 600;
+  opacity: 0.88;
 }
 
-.mega-image-title {
-  font-size: 0.92rem;
-  line-height: 1.35;
-  font-weight: 500;
+.mega-card-title {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: #fff8ef;
+  transition: opacity var(--transition-medium), transform var(--transition-medium);
+}
+
+.mega-card-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 248, 239, 0.95);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-medium);
+}
+
+.mega-menu-card:hover .mega-card-title {
+  opacity: 0.96;
+  transform: translateY(-1px);
+}
+
+.mega-menu-card:hover .mega-card-title::after {
+  transform: scaleX(1);
+}
+
+.mega-card-desc {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: rgba(255, 248, 239, 0.88);
 }
 
 .nav-cta {
@@ -1995,18 +2007,13 @@ input, textarea, select {
    RESPONSIVE STYLES
    ============================================ */
 @media (max-width: 1024px) {
-  .nav-dropdown-menu {
-    width: min(900px, calc(100vw - 36px));
-    grid-template-columns: 1fr;
+  .mega-menu {
+    width: min(960px, calc(100vw - 36px));
+    padding: 1.55rem;
   }
 
-  .mega-menu-featured {
+  .mega-menu-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: none;
-  }
-
-  .mega-image-card-large {
-    min-height: 130px;
   }
 
   .why-demo-grid {
@@ -2048,6 +2055,21 @@ input, textarea, select {
   :root {
     --demo-banner-height: 78px;
     --banner-nav-gap: 6px;
+  }
+
+  .mega-menu {
+    width: min(720px, calc(100vw - 24px));
+    padding: 1.2rem;
+  }
+
+  .mega-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .mega-menu-card {
+    min-height: 210px;
+    padding: 1.5rem;
   }
 
   .demo-banner-container {
