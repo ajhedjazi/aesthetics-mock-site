@@ -987,6 +987,10 @@ input, textarea, select {
   color: var(--text-light);
 }
 
+.problem-section .why-demo-card {
+  min-height: 100%;
+}
+
 /* ============================================
    4. TREATMENTS SECTION
    ============================================ */
@@ -1051,6 +1055,20 @@ input, textarea, select {
 
 .treatment-link:hover {
   color: var(--brown-warm);
+}
+
+.services-note-card {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(231, 227, 222, 0.92) 100%);
+  border: 1px solid rgba(135, 93, 59, 0.16);
+}
+
+.services-note-card .treatment-link {
+  margin-top: auto;
 }
 
 /* ============================================
@@ -1242,6 +1260,57 @@ input, textarea, select {
   font-size: 0.8rem;
   color: var(--text-light);
   font-style: italic;
+}
+
+.demo-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.demo-case-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(135, 93, 59, 0.12);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.demo-case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.demo-case-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(135deg, #D4C4B5 0%, #C9B8A8 100%);
+}
+
+.demo-case-body {
+  padding: 1.75rem;
+}
+
+.demo-case-tag {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown-warm);
+}
+
+.demo-case-body h3 {
+  font-size: 1.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.demo-case-body p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
 }
 
 /* ============================================
@@ -1554,6 +1623,23 @@ input, textarea, select {
 .contact-form-section > p {
   color: var(--text-light);
   margin-bottom: 2rem;
+}
+
+.final-cta-section .contact-form-section,
+.final-cta-section .clinic-details,
+.final-cta-section .demo-contact-card {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(135, 93, 59, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.final-cta-section .contact-form-section {
+  padding: 2rem;
+}
+
+.final-cta-section .clinic-details {
+  padding: 2rem;
 }
 
 .contact-form {
@@ -2030,7 +2116,8 @@ input, textarea, select {
   
   .treatments-grid,
   .results-grid,
-  .reviews-grid {
+  .reviews-grid,
+  .demo-work-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   
@@ -2131,7 +2218,8 @@ input, textarea, select {
   .results-grid,
   .reviews-grid,
   .process-grid,
-  .why-demo-grid {
+  .why-demo-grid,
+  .demo-work-grid {
     grid-template-columns: 1fr;
   }
   
