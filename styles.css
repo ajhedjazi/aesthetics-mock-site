@@ -358,6 +358,7 @@ input, textarea, select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
+  grid-auto-rows: 1fr;
 }
 
 .mega-menu-card {
@@ -365,14 +366,22 @@ input, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 0.6rem;
+  align-items: flex-start;
+  gap: 0.72rem;
   min-height: 230px;
-  padding: 1.6rem;
+  height: 100%;
+  padding: 1.75rem;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 16px 34px rgba(47, 34, 25, 0.18);
-  color: rgba(255, 249, 242, 0.95) !important;
+  box-shadow: 0 20px 42px rgba(33, 24, 18, 0.26);
+  color: rgba(255, 249, 242, 0.96) !important;
   isolation: isolate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mega-menu-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .mega-menu-card::before {
@@ -383,7 +392,8 @@ input, textarea, select {
   background-size: cover;
   background-position: center;
   transform: scale(1);
-  transition: transform 0.7s ease;
+  filter: brightness(0.62) saturate(0.84) contrast(1.02);
+  transition: transform 0.3s ease, filter 0.3s ease;
   z-index: -2;
 }
 
@@ -391,20 +401,29 @@ input, textarea, select {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(165deg, rgba(31, 23, 17, 0.28) 12%, rgba(31, 23, 17, 0.74) 68%, rgba(24, 18, 14, 0.82) 100%);
+  background:
+    linear-gradient(0deg, rgba(14, 10, 8, 0.92) 0%, rgba(20, 14, 10, 0.8) 34%, rgba(25, 18, 14, 0.56) 62%, rgba(30, 22, 17, 0.24) 100%),
+    linear-gradient(180deg, rgba(39, 29, 23, 0.12) 0%, rgba(39, 29, 23, 0.12) 100%);
   z-index: -1;
 }
 
+.mega-menu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 48px rgba(33, 24, 18, 0.3);
+}
+
 .mega-menu-card:hover::before {
-  transform: scale(1.06);
+  transform: scale(1.05);
+  filter: brightness(0.58) saturate(0.9) contrast(1.04);
 }
 
 .mega-card-category {
+  display: block;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
-  opacity: 0.88;
+  opacity: 0.82;
 }
 
 .mega-card-title {
@@ -412,10 +431,12 @@ input, textarea, select {
   display: inline-block;
   width: fit-content;
   font-family: var(--font-heading);
-  font-size: 1.35rem;
-  line-height: 1.2;
+  font-size: 1.48rem;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
   color: #fff8ef;
-  transition: opacity var(--transition-medium), transform var(--transition-medium);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .mega-card-title::after {
@@ -428,7 +449,7 @@ input, textarea, select {
   background: rgba(255, 248, 239, 0.95);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform var(--transition-medium);
+  transition: transform 0.3s ease;
 }
 
 .mega-menu-card:hover .mega-card-title {
@@ -442,10 +463,12 @@ input, textarea, select {
 
 .mega-card-desc {
   margin: 0;
+  margin-top: auto;
   max-width: 34ch;
-  font-size: 0.86rem;
-  line-height: 1.55;
-  color: rgba(255, 248, 239, 0.88);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 248, 239, 0.76);
+  text-wrap: pretty;
 }
 
 .nav-cta {
@@ -2069,7 +2092,7 @@ input, textarea, select {
 
   .mega-menu-card {
     min-height: 210px;
-    padding: 1.5rem;
+    padding: 1.75rem;
   }
 
   .demo-banner-container {
