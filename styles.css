@@ -2465,7 +2465,6 @@ input, textarea, select {
 .map-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   gap: 0;
@@ -2552,6 +2551,10 @@ input, textarea, select {
 
 .demo-contact-actions .btn {
   width: 100%;
+}
+
+.final-cta-section .map-embed.demo-contact-card {
+  border-radius: 0;
 }
 
 /* Mobile */
