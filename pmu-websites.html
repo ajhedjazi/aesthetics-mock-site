@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PMU Websites That Build Instant Trust | Aesthetic Flow</title>
+  <meta name="description" content="Aesthetic Flow creates premium PMU artist websites designed to build trust, reduce hesitation, and turn more enquiries into bookings.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #F2ECE8;
+      --bg-secondary: #E7E3DE;
+      --accent: #4A3422;
+      --text-primary: #2B2B2B;
+      --text-muted: #645a52;
+      --card: #FFFDFB;
+      --border: rgba(74, 52, 34, 0.12);
+      --shadow-soft: 0 16px 44px rgba(74, 52, 34, 0.08);
+      --shadow-card: 0 10px 30px rgba(74, 52, 34, 0.08);
+      --radius-sm: 18px;
+      --radius-md: 22px;
+      --radius-lg: 24px;
+      --max-width: 1120px;
+      --section-padding: 96px;
+      --section-padding-mobile: 56px;
+      --transition: 0.28s ease;
+      --font-heading: "EB Garamond", Georgia, serif;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+
+    .page-shell {
+      overflow: hidden;
+    }
+
+    .section {
+      padding: var(--section-padding) 20px;
+    }
+
+    .section-alt {
+      background: var(--bg-secondary);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      line-height: 1.05;
+      color: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      margin-bottom: 1.4rem;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 5vw, 3.45rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin-bottom: 3rem;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0.95rem 1.45rem;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow-card);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #5c4130;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(74, 52, 34, 0.18);
+      background: rgba(255, 253, 251, 0.82);
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: #fff;
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero {
+      padding: 48px 20px var(--section-padding);
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.9), transparent 28%),
+        linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .hero-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-copy p {
+      max-width: 560px;
+      margin-bottom: 1.15rem;
+      font-size: 1.04rem;
+    }
+
+    .hero-note {
+      margin-bottom: 2rem;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-art {
+      min-height: 560px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(74, 52, 34, 0.08), rgba(74, 52, 34, 0.22)),
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.65), transparent 34%),
+        linear-gradient(135deg, #dacdc0 0%, #cab8a9 40%, #f4ede8 100%);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-art::before,
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 253, 251, 0.55);
+      filter: blur(0.5px);
+    }
+
+    .hero-art::before {
+      width: 220px;
+      height: 220px;
+      top: 12%;
+      right: -50px;
+    }
+
+    .hero-art::after {
+      width: 160px;
+      height: 160px;
+      bottom: 12%;
+      left: -28px;
+    }
+
+    .hero-brow-placeholder {
+      position: absolute;
+      inset: 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(74, 52, 34, 0.08)),
+        repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.16) 0 14px, rgba(255, 255, 255, 0.03) 14px 28px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 1.5rem;
+    }
+
+    .hero-brow-placeholder span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.65rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255, 253, 251, 0.82);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .floating-card {
+      position: absolute;
+      right: -16px;
+      bottom: 30px;
+      max-width: 270px;
+      padding: 1.25rem 1.35rem;
+      border-radius: 22px;
+      background: rgba(255, 253, 251, 0.94);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(74, 52, 34, 0.08);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-family: var(--font-heading);
+      color: var(--accent);
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+
+    .floating-card p {
+      margin-top: 0.45rem;
+      font-size: 0.92rem;
+    }
+
+    .card-grid-3,
+    .card-grid-6 {
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    .card-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card-grid-6 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .info-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 1.6rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+    }
+
+    .info-card p {
+      font-size: 0.95rem;
+    }
+
+    .problem-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .problem-analogy {
+      padding: 1.8rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 253, 251, 0.7);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      color: var(--accent);
+      font-size: 1.05rem;
+    }
+
+    .problem-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .problem-pill {
+      padding: 1.3rem 1.4rem;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+    }
+
+    .problem-pill strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--accent);
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    .checklist-shell {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .checklist-panel {
+      background: var(--card);
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .checklist {
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1rem 1.05rem;
+      border-radius: 18px;
+      background: rgba(74, 52, 34, 0.04);
+    }
+
+    .check-icon {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.84rem;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .journey-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 1.65rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+    }
+
+    .journey-number {
+      display: inline-flex;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: rgba(74, 52, 34, 0.08);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .mockup-wrap {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .mockup-copy p + p {
+      margin-top: 0.95rem;
+    }
+
+    .mockup-card {
+      background: linear-gradient(180deg, rgba(255, 253, 251, 0.96), rgba(247, 242, 238, 0.98));
+      border-radius: 30px;
+      border: 1px solid rgba(74, 52, 34, 0.1);
+      box-shadow: var(--shadow-soft);
+      padding: 1.2rem;
+    }
+
+    .mockup-browser {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .mockup-browser span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(74, 52, 34, 0.22);
+    }
+
+    .mockup-flow {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .mockup-block {
+      border-radius: 20px;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(74, 52, 34, 0.08);
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mockup-block strong {
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .mockup-block span {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .mockup-block.hero-block {
+      background: linear-gradient(135deg, #efe5dc 0%, #ffffff 100%);
+      min-height: 110px;
+    }
+
+    .mockup-block.cta-block {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .mockup-block.cta-block strong,
+    .mockup-block.cta-block span {
+      color: #fff;
+    }
+
+    .dark-cta {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .dark-cta h2,
+    .dark-cta p,
+    .dark-cta .eyebrow {
+      color: #fff;
+    }
+
+    .dark-cta p {
+      opacity: 0.82;
+    }
+
+    .dark-cta .btn-primary {
+      background: #fff;
+      color: var(--accent);
+    }
+
+    .dark-cta .btn-primary:hover {
+      background: #f7efe8;
+    }
+
+    .dark-cta .btn-secondary {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .dark-cta .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .faq-item {
+      background: var(--card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.35rem 1.4rem;
+      text-align: left;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .faq-toggle {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      border-radius: 50%;
+      background: rgba(74, 52, 34, 0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition), background var(--transition);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition), padding var(--transition);
+      padding: 0 1.4rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 180px;
+      padding: 0 1.4rem 1.35rem;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+      background: rgba(74, 52, 34, 0.14);
+    }
+
+    .final-cta {
+      text-align: center;
+    }
+
+    .final-cta .container {
+      max-width: 760px;
+    }
+
+    .final-cta p {
+      margin: 0 auto 1.7rem;
+      max-width: 560px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .problem-layout,
+      .checklist-shell,
+      .mockup-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid-3,
+      .journey-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card-grid-6 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .floating-card {
+        right: 18px;
+        bottom: 18px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .section {
+        padding: var(--section-padding-mobile) 16px;
+      }
+
+      .hero {
+        padding: 28px 16px var(--section-padding-mobile);
+      }
+
+      .hero-art {
+        min-height: 400px;
+      }
+
+      .btn-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .card-grid-3,
+      .card-grid-6,
+      .journey-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-analogy,
+      .checklist-panel,
+      .journey-card,
+      .info-card {
+        padding: 1.35rem;
+      }
+
+      .floating-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: -34px 18px 0;
+        max-width: none;
+      }
+
+      .section-intro {
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">PMU Artist Websites</span>
+          <h1>PMU Websites That Build Instant Trust</h1>
+          <p>Getting enquiries but not enough bookings? Your website might be where clients are dropping off.</p>
+          <p class="hero-note">PMU clients rarely book on impulse. They need to feel safe, informed, and confident in your work before they commit. If your website does not create that reassurance quickly, interest fades before a booking happens.</p>
+          <div class="btn-row">
+            <a href="/contact" class="btn btn-primary">Get Your Website Reviewed</a>
+            <a href="#pmu-needs" class="btn btn-secondary">See What A PMU Site Needs</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-brow-placeholder">
+              <span>PMU / brows image placeholder</span>
+            </div>
+          </div>
+          <div class="floating-card">
+            <strong>Designed to turn interest into bookings</strong>
+            <p>Premium visuals are only the start. The structure has to carry people toward action.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">The Problem</span>
+          <h2>People are interested — but they are not being guided to book.</h2>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-analogy">
+            Imagine walking into a shop. You see something you like. You are ready to buy — but nobody is at the till. You wait, look around, and eventually walk out. That is what happens when someone lands on your website but cannot find a clear next step.
+          </div>
+          <div class="problem-stack">
+            <div class="problem-pill">
+              <strong>They hesitate</strong>
+              <p>They like what they see, but still do not feel fully confident about taking the next step.</p>
+            </div>
+            <div class="problem-pill">
+              <strong>They overthink</strong>
+              <p>Without answers, proof, and reassurance, small doubts grow into reasons not to book.</p>
+            </div>
+            <div class="problem-pill">
+              <strong>They leave</strong>
+              <p>When booking feels unclear or effortful, people return to scrolling instead of becoming clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pmu-needs">
+      <div class="container">
+        <div class="section-intro">
+          <h2>A PMU website has to do more than look good.</h2>
+          <p>A strong PMU site should quietly remove doubt, answer the right questions, and make your work feel professional before anyone even messages you.</p>
+        </div>
+        <div class="card-grid-6">
+          <article class="info-card">
+            <h3>Build trust quickly</h3>
+            <p>First impressions matter more when treatments feel personal, visible, and permanent.</p>
+          </article>
+          <article class="info-card">
+            <h3>Explain treatments clearly</h3>
+            <p>Clients should understand what brows, lip blush, or corrections involve without confusion.</p>
+          </article>
+          <article class="info-card">
+            <h3>Show your work professionally</h3>
+            <p>Your results need to feel curated, credible, and easy to browse.</p>
+          </article>
+          <article class="info-card">
+            <h3>Answer common objections</h3>
+            <p>Pain, healing, suitability, and maintenance should be addressed before hesitation grows.</p>
+          </article>
+          <article class="info-card">
+            <h3>Make booking feel easy</h3>
+            <p>When the next step is obvious, more people follow through instead of disappearing.</p>
+          </article>
+          <article class="info-card">
+            <h3>Reassure nervous first-time clients</h3>
+            <p>Many PMU enquiries come from people who need calm, clear reassurance before they commit.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="checklist-shell">
+          <div>
+            <span class="eyebrow">Trust Section</span>
+            <h2>What builds trust before they message you?</h2>
+            <p>Clients are making a decision about your professionalism before they send a DM. The website should give them everything they need to feel confident about that choice.</p>
+          </div>
+          <div class="checklist-panel">
+            <div class="checklist">
+              <div class="check-item"><span class="check-icon">✓</span><span>Practitioner intro</span></div>
+              <div class="check-item"><span class="check-icon">✓</span><span>Treatment explanations</span></div>
+              <div class="check-item"><span class="check-icon">✓</span><span>Healing expectations</span></div>
+              <div class="check-item"><span class="check-icon">✓</span><span>Before &amp; after gallery</span></div>
+              <div class="check-item"><span class="check-icon">✓</span><span>Reviews/testimonials</span></div>
+              <div class="check-item"><span class="check-icon">✓</span><span>FAQs</span></div>
+              <div class="check-item"><span class="check-icon">✓</span><span>Clear booking buttons</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>How the page should guide them</h2>
+          <p>A good PMU website creates momentum. Each section should make the next step feel more natural, not more uncertain.</p>
+        </div>
+        <div class="journey-grid">
+          <article class="journey-card">
+            <span class="journey-number">1</span>
+            <h3>They land</h3>
+            <p>The design gives a polished first impression and makes your business feel established.</p>
+          </article>
+          <article class="journey-card">
+            <span class="journey-number">2</span>
+            <h3>They understand</h3>
+            <p>The page explains what you offer, who it is for, and what makes your service worth trusting.</p>
+          </article>
+          <article class="journey-card">
+            <span class="journey-number">3</span>
+            <h3>They feel reassured</h3>
+            <p>Proof, FAQs, and clear explanations reduce nerves and answer the doubts that stop bookings.</p>
+          </article>
+          <article class="journey-card">
+            <span class="journey-number">4</span>
+            <h3>They book</h3>
+            <p>The call to action feels simple and obvious because the trust work has already been done.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="example-layout">
+      <div class="container">
+        <div class="mockup-wrap">
+          <div class="mockup-copy">
+            <span class="eyebrow">Example Layout</span>
+            <h2>From Instagram interest to booked appointment</h2>
+            <p>Instagram can attract attention, but it rarely carries the full trust-building journey on its own. People may like your work, save your posts, and still hesitate when it comes time to commit.</p>
+            <p>Your website is where that interest should turn into clarity. It should explain the treatment, answer the nerves, show proof, and make the next step feel safe.</p>
+          </div>
+          <div class="mockup-card" aria-label="PMU website structure mockup">
+            <div class="mockup-browser"><span></span><span></span><span></span></div>
+            <div class="mockup-flow">
+              <div class="mockup-block hero-block">
+                <div>
+                  <strong>Hero</strong>
+                  <span>Clear offer, trust-led first impression</span>
+                </div>
+                <span>01</span>
+              </div>
+              <div class="mockup-block">
+                <div>
+                  <strong>Services</strong>
+                  <span>Brows, lip blush, corrections, FAQs</span>
+                </div>
+                <span>02</span>
+              </div>
+              <div class="mockup-block">
+                <div>
+                  <strong>Reviews</strong>
+                  <span>Social proof and reassurance</span>
+                </div>
+                <span>03</span>
+              </div>
+              <div class="mockup-block">
+                <div>
+                  <strong>FAQ</strong>
+                  <span>Healing, pain, process, expectations</span>
+                </div>
+                <span>04</span>
+              </div>
+              <div class="mockup-block cta-block">
+                <div>
+                  <strong>CTA</strong>
+                  <span>Direct path to enquiry or booking</span>
+                </div>
+                <span>05</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-cta">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">Website Review</span>
+          <h2>Want to know where your website is losing clients?</h2>
+          <p>If you are getting enquiries but bookings still feel inconsistent, a website review can show where trust is dropping, where clarity is missing, and what needs improving first.</p>
+        </div>
+        <div class="btn-row">
+          <a href="/contact" class="btn btn-primary">Request A Website Review</a>
+          <a href="#example-layout" class="btn btn-secondary">View Example Layout</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>PMU Website Questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do I need a website if I have Instagram?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Instagram helps people discover you, but a website helps them trust you enough to book. It gives you more room to explain, reassure, and guide them clearly.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What should a PMU website include?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>A strong PMU site should include a clear introduction, treatment information, healing expectations, a professional gallery, testimonials, FAQs, and obvious booking calls to action.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can you redesign my current site?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If your current website feels unclear, dated, or not aligned with the quality of your work, I can redesign it around trust and conversion.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Will it match my branding?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The structure is designed to convert, but the visual direction can be tailored to your own branding, tone, and ideal client style.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How long does it take?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>That depends on scope, but the process is designed to keep things focused and efficient. A review is the best first step if you want clarity on what to prioritise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta section-alt">
+      <div class="container">
+        <h2>Ready to make your PMU website feel more professional?</h2>
+        <p>If your work already gets attention, the next step is making sure your website turns that attention into confidence and bookings.</p>
+        <a href="/contact" class="btn btn-primary">Get In Touch</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      const button = item.querySelector('.faq-question');
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.faq-item').forEach((other) => {
+          if (other !== item) {
+            other.classList.remove('active');
+          }
+        });
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
