@@ -2468,6 +2468,7 @@ input, textarea, select {
   gap: 1rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  gap: 0;
 }
 
 /* Left image */
