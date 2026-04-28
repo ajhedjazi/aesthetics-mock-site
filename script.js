@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const body = document.body;
+  document.documentElement.classList.remove('no-js');
   const navbar = document.getElementById('navbar');
   const backToTop = document.getElementById('backToTop');
   const mobileToggle = document.getElementById('mobileToggle');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const dropdowns = document.querySelectorAll('.nav-dropdown');
   const mobileGroups = document.querySelectorAll('.mobile-nav-group');
   const faqItems = document.querySelectorAll('.faq-item');
+  const revealItems = document.querySelectorAll('.reveal');
   const pageAnchors = document.querySelectorAll('a[href^="#"]');
   const forms = document.querySelectorAll('form[data-mail-target], form[data-general-email]');
 
@@ -48,6 +50,29 @@ document.addEventListener('DOMContentLoaded', function() {
   updateBackToTopState();
   window.addEventListener('scroll', updateNavbarState);
   window.addEventListener('scroll', updateBackToTopState);
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealItems.forEach(function(item) {
+      revealObserver.observe(item);
+    });
+  } else {
+    revealItems.forEach(function(item) {
+      item.classList.add('visible');
+    });
+  }
 
   dropdowns.forEach((dropdown) => {
     const toggle = dropdown.querySelector('.nav-dropdown-toggle');

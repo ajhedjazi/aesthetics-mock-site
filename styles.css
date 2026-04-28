@@ -1011,6 +1011,9 @@ input, textarea, select {
   padding: 0 2rem 2rem;
   transition: all var(--transition-medium);
   border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 .treatment-card:hover {
@@ -1021,8 +1024,35 @@ input, textarea, select {
 
 .treatment-icon {
   font-size: 2rem;
-  margin-bottom: 1rem;
   color: var(--brown-warm);
+}
+
+.treatment-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-eyebrow {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown-warm);
+}
+
+.treatment-icon-shell {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(135, 93, 59, 0.08);
+  border: 1px solid rgba(135, 93, 59, 0.12);
 }
 
 .treatment-card h3 {
@@ -1059,15 +1089,16 @@ input, textarea, select {
 
 .services-note-card {
   padding-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(231, 227, 222, 0.92) 100%);
   border: 1px solid rgba(135, 93, 59, 0.16);
 }
 
 .services-note-card .treatment-link {
+  margin-top: auto;
+}
+
+.treatment-card .treatment-link {
   margin-top: auto;
 }
 
@@ -1289,6 +1320,29 @@ input, textarea, select {
   background: linear-gradient(135deg, #D4C4B5 0%, #C9B8A8 100%);
 }
 
+.demo-case-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 35%),
+    linear-gradient(135deg, rgba(135, 93, 59, 0.18) 0%, rgba(74, 52, 34, 0.08) 100%);
+}
+
+.demo-placeholder-icon {
+  width: 72px;
+  height: 72px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  border: 1px solid rgba(74, 52, 34, 0.12);
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--brown-warm);
+  font-size: 1.8rem;
+  box-shadow: var(--shadow-soft);
+}
+
 .demo-case-body {
   padding: 1.75rem;
 }
@@ -1313,6 +1367,10 @@ input, textarea, select {
   margin-bottom: 1rem;
 }
 
+.demo-case-card .treatment-link {
+  margin-top: auto;
+}
+
 /* ============================================
    7. PROCESS SECTION
    ============================================ */
@@ -1334,6 +1392,8 @@ input, textarea, select {
   border-radius: var(--radius-md);
   position: relative;
   transition: transform var(--transition-medium);
+  border: 1px solid rgba(135, 93, 59, 0.12);
+  box-shadow: var(--shadow-soft);
 }
 
 .process-card:hover {
@@ -2087,6 +2147,11 @@ input, textarea, select {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+html.no-js .reveal {
+  opacity: 1;
+  transform: none;
 }
 
 /* ============================================
