@@ -2466,7 +2466,8 @@ input, textarea, select {
 .demo-contact-card {
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(242, 236, 232, 0.92) 100%);
+  margin-left: -1px;
+  background: linear-gradient(180deg, #fffdfb 0%, #f2ece8 100%);
 }
 
 .demo-contact-inner {
