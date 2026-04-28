@@ -287,6 +287,8 @@ input, textarea, select {
   height: 2px;
   background: var(--brown-warm);
   transition: width var(--transition-medium);
+}
+
 .nav-links a:hover::after,
 .nav-dropdown.open .nav-dropdown-toggle::after,
 .nav-dropdown-toggle:hover::after {
