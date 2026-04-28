@@ -24,6 +24,7 @@
   --text-light: #5A5A5A;
   --white: #FFFFFF;
   --demo-banner-height: 46px;
+  --banner-nav-gap: 10px;
   
   /* Typography */
   --font-heading: 'EB Garamond', Georgia, 'Times New Roman', serif;
@@ -215,7 +216,7 @@ input, textarea, select {
    ============================================ */
 .navbar {
   position: fixed;
-  top: var(--demo-banner-height);
+  top: calc(var(--demo-banner-height) + var(--banner-nav-gap));
   left: 0;
   right: 0;
   z-index: 1000;
@@ -234,11 +235,12 @@ input, textarea, select {
 .nav-container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0.5rem 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  min-height: 84px;
+  gap: 1.25rem;
 }
 
 .nav-logo {
@@ -264,7 +266,7 @@ input, textarea, select {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.75rem;
   align-items: center;
 }
 
@@ -316,86 +318,122 @@ input, textarea, select {
 
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 14px);
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  min-width: 380px;
-  padding: 0.75rem;
-  border-radius: var(--radius-md);
-  background: rgba(255, 253, 251, 0.98);
-  border: 1px solid rgba(74, 52, 34, 0.08);
-  box-shadow: var(--shadow-card);
+  top: calc(100% + 18px);
+  left: 0;
+  transform: translateY(12px);
+  width: min(1100px, calc(100vw - 48px));
+  padding: 1.25rem;
+  border-radius: 20px;
+  background: rgba(255, 253, 251, 0.99);
+  border: 1px solid rgba(74, 52, 34, 0.1);
+  box-shadow: 0 24px 64px rgba(47, 34, 25, 0.16);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-medium), transform var(--transition-medium);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.1rem;
 }
 
 .nav-dropdown.open .nav-dropdown-menu {
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
-/* Premium Dropdown Item Card */
-.dropdown-item {
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.9rem 1rem !important;
-  margin-bottom: 0.35rem;
-  border-radius: 12px;
-  background: transparent;
-  transition: all var(--transition-medium);
-  border: 1px solid transparent;
+.nav-mega-dropdown {
+  position: static;
 }
 
-.dropdown-item:last-child {
-  margin-bottom: 0;
+.mega-menu-services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
-.dropdown-item::after {
+.mega-service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 132px;
+  padding: 1rem 1.05rem;
+  border-radius: 14px;
+  background: linear-gradient(155deg, rgba(74, 52, 34, 0.03), rgba(74, 52, 34, 0.08));
+  border: 1px solid rgba(74, 52, 34, 0.12);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
+}
+
+.mega-service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(47, 34, 25, 0.12);
+  border-color: rgba(74, 52, 34, 0.22);
+}
+
+.mega-service-card::after {
   display: none;
 }
 
-.dropdown-item:hover {
-  background: rgba(74, 52, 34, 0.04);
-  border-color: rgba(74, 52, 34, 0.08);
-}
-
-.dropdown-item-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  flex: 1;
-}
-
-.dropdown-item-title {
-  font-size: 0.9rem;
+.mega-service-title {
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
-.dropdown-item-desc {
-  font-size: 0.78rem;
+.mega-service-desc {
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.5;
   font-weight: 400;
 }
 
-.dropdown-item-arrow {
-  font-size: 1rem;
-  color: var(--brown-warm);
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: all var(--transition-medium);
-  flex-shrink: 0;
-  margin-left: 0.75rem;
+.mega-menu-featured {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-rows: 1fr 1fr;
 }
 
-.dropdown-item:hover .dropdown-item-arrow {
-  opacity: 1;
-  transform: translateX(0);
+.mega-image-card {
+  min-height: 126px;
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  color: var(--white) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 22px rgba(47, 34, 25, 0.18);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.mega-image-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(47, 34, 25, 0.24);
+}
+
+.mega-image-card::after {
+  display: none;
+}
+
+.mega-image-card-large {
+  min-height: 165px;
+}
+
+.mega-image-eyebrow {
+  font-size: 0.69rem;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  opacity: 0.9;
+}
+
+.mega-image-title {
+  font-size: 0.92rem;
+  line-height: 1.35;
+  font-weight: 500;
 }
 
 .nav-cta {
@@ -450,11 +488,11 @@ input, textarea, select {
 /* Mobile Menu */
 .mobile-menu {
   position: fixed;
-  top: var(--demo-banner-height);
+  top: calc(var(--demo-banner-height) + var(--banner-nav-gap));
   right: -100%;
   width: 100%;
   max-width: 400px;
-  height: calc(100vh - var(--demo-banner-height));
+  height: calc(100vh - (var(--demo-banner-height) + var(--banner-nav-gap)));
   background: var(--bg-primary);
   padding: 100px 30px 30px;
   transition: right var(--transition-medium);
@@ -1957,6 +1995,20 @@ input, textarea, select {
    RESPONSIVE STYLES
    ============================================ */
 @media (max-width: 1024px) {
+  .nav-dropdown-menu {
+    width: min(900px, calc(100vw - 36px));
+    grid-template-columns: 1fr;
+  }
+
+  .mega-menu-featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .mega-image-card-large {
+    min-height: 130px;
+  }
+
   .why-demo-grid {
     grid-template-columns: 1fr;
   }
@@ -1995,6 +2047,7 @@ input, textarea, select {
 @media (max-width: 768px) {
   :root {
     --demo-banner-height: 78px;
+    --banner-nav-gap: 6px;
   }
 
   .demo-banner-container {
@@ -2011,6 +2064,11 @@ input, textarea, select {
   .nav-links,
   .nav-cta {
     display: none;
+  }
+
+  .nav-container {
+    min-height: 76px;
+    padding: 0.35rem 20px;
   }
   
   .mobile-toggle {
@@ -2086,6 +2144,7 @@ input, textarea, select {
   :root {
     --section-padding: 60px 15px;
     --demo-banner-height: 92px;
+    --banner-nav-gap: 4px;
   }
   
   .nav-container {
