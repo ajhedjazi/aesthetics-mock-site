@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const body = document.body;
   const navbar = document.getElementById('navbar');
+  const backToTop = document.getElementById('backToTop');
   const mobileToggle = document.getElementById('mobileToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const dropdowns = document.querySelectorAll('.nav-dropdown');
@@ -20,6 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  function updateBackToTopState() {
+    if (!backToTop) {
+      return;
+    }
+    backToTop.classList.toggle('visible', window.scrollY > 300);
+  }
+
   function closeAllDropdowns() {
     dropdowns.forEach((dropdown) => {
       dropdown.classList.remove('open');
@@ -37,7 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   updateNavbarState();
+  updateBackToTopState();
   window.addEventListener('scroll', updateNavbarState);
+  window.addEventListener('scroll', updateBackToTopState);
 
   dropdowns.forEach((dropdown) => {
     const toggle = dropdown.querySelector('.nav-dropdown-toggle');
@@ -169,4 +179,10 @@ document.addEventListener('DOMContentLoaded', function() {
       window.location.href = mailto;
     });
   });
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
